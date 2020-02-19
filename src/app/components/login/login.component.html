@@ -1,0 +1,14 @@
+<div class="login">
+    <div *ngIf="!valid">
+        <form class="login-form flex" (ngSubmit)="onSubmit(userLogin)">
+            <input type="text" placeholder="Username..." [(ngModel)]="userLogin.username" maxlength="50" name="username"/>
+            <input type="password" placeholder="Password..." [(ngModel)]="userLogin.password" maxlength="50" name="password"/>
+            <input type="submit" value="Login"/>
+        </form>
+    </div>
+
+    <div *ngIf="valid">
+        Hello {{userSession.username}} <input type="button" value="Logout" (click)="logout()"/>
+    </div>
+</div>
+

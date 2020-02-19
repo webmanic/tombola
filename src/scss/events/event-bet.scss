@@ -1,0 +1,61 @@
+.event-bet {
+    img {
+        width: 100%;
+    }
+    ul {
+        li {
+            float: left;
+            width: 56px;
+            height: 56px;
+            text-align: center;
+            background: $GREY-SOFT-B;
+            margin: 2px;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 25px;
+            padding-top: 11px;
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                    user-select: none; /* Non-prefixed version, currently
+                                        supported by Chrome, Opera and Firefox */
+
+            &:hover{
+                background-color: $BLUE-DARK-B;
+                color: $GREY-SOFT-B;
+            }
+        }
+        li {
+            &.disabled {
+                opacity: 0.3;
+                cursor: default;
+
+                &:hover{
+                    background-color: $GREY-SOFT-B;
+                    color: black;
+                }
+            }
+
+            &.owner {
+                background-color: $BLUE-DARK-A;
+                color: $GREY-SOFT-B;
+                &:hover{
+                    background-color: $BLUE-DARK-A;
+                    color: $GREY-SOFT-B;
+                }
+            }
+
+            &.selected{
+                background-color: $BLUE-DARK-A;
+                color: $GREY-SOFT-B;
+            }
+
+            &:focus{
+                background-color: red;
+                color: $GREY-SOFT-B;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+<li [routerLink]="['/', event._id]">
+    <div class="image">
+        <img [src]="event.imageUrl"/>
+    </div>
+    <div class="info">
+        <div class="title">
+            Win {{event.title}}
+        </div>
+        <div *ngIf="valid">
+            Place a Bet {{event.price | formatCurrency | currency:'GBP'}}
+        </div>
+    </div>
+</li>

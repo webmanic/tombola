@@ -1,0 +1,11 @@
+@import '../../../scss/global/global.scss';
+
+header {
+    background: $BLUE-DARK-A;
+    color: $GREY-SOFT-A;
+
+    h1{
+        margin: 0px;
+        cursor: pointer;
+    }
+}

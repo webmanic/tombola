@@ -1,0 +1,14 @@
+<div class="event-bet">
+    <h1>Win {{eventBets.title}}</h1>
+    <div class="container flex">
+        <div class="container-50">
+            <img [src]="eventBets.imageUrl"/>
+        </div>
+        <div class="container-50">
+            <div class="container-100 ticker-summary">
+                Total: {{ price | formatCurrency | currency:'GBP'}}
+            </div>
+            <tb-event-tickets [tickets]="eventBets.tickets" (ticketSelect)="ticketSelected($event)"></tb-event-tickets>
+        </div>
+    </div>
+</div>

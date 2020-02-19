@@ -1,0 +1,4 @@
+<li [ngClass]="{'disabled': ticket.disabled, 
+                'owner': ticket.owner,
+                'selected': ticket.selected}" 
+    (click)="ticketSelected(ticket)">{{ticket.ticketNo}}</li>

@@ -1,0 +1,6 @@
+
+<ul class="tickets">
+    <tb-event-ticket *ngFor="let ticket of tickets" 
+                    [ticket]="ticket"
+                    (ticketSelect)="ticketSelected($event)"></tb-event-ticket>
+</ul>
