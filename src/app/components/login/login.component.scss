@@ -4,6 +4,10 @@
     .login-form{
         input {
             margin-right: 1px;
+            width: 100%;
+        }
+        input[type="submit"]{
+            flex-basis: 40%;
         }
     }
 }

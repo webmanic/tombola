@@ -1,0 +1,15 @@
+<div class="progress">
+    <div class="progress-bar" 
+        role="progressbar" 
+        [attr.aria-valuenow]="timeLeft" 
+        [attr.aria-valuemin]="0" 
+        [attr.aria-valuemax]="time" 
+        [ngStyle]="{'width': width + '%'}"
+        [ngClass]="{ 
+            'info': (width > 60 && width <= 100), 
+            'warn': (width > 30 && width <= 60),
+            'error': (width > 0 && width <= 30)
+        }"
+        *ngIf="withinTimeLimit">
+    </div>
+</div>

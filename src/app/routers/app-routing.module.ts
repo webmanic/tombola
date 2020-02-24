@@ -29,7 +29,7 @@ const routes: Routes = [
         }
       },
       {
-        path: ':id',
+        path: 'valid/:id',
         component: EventBidComponent,
         resolve: {
           pageValid: EventPageValidService

@@ -1,9 +1,19 @@
 <header>
-    <div class="container flex">
-        <div class="inline-flex container-75">
+    <div class="container flex flex-wrap">
+        <div class="container-60">
             <h1 [routerLink]="['/']" class="logo">Tombola</h1>
         </div>
-        <div class="inline-flex container-25">
+        <div class="container-40 text-align-right" *ngIf="showLogin === false">
+            <div class="login-signup-info">
+                <div class="signup-login" *ngIf="showLogin === false && userSession === false">
+                    <a [routerLink]="['/signup']">Signup</a> / <a (click)="onShowLogin($event)">Login</a>
+                </div>
+                <div *ngIf="userSession">
+                    Hello {{userSession.username}} <input type="button" value="Logout" (click)="logout()"/>
+                </div>
+            </div>
+        </div>
+        <div class="container-40 container-sm-100" *ngIf="showLogin === true">
             <tb-login class="float-right full-width"></tb-login>
         </div>
     </div>

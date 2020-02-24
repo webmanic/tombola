@@ -1,1 +1,8 @@
-<p>sign-up works!</p>
+<div class="signup">
+    <h1>Signup and win prizes</h1>
+    <form (ngSubmit)="onSubmit(userSignup)">
+        <input type="text" placeholder="Username..." [(ngModel)]="userSignup.username" maxlength="50" name="username"/>
+        <input type="password" placeholder="Password..." [(ngModel)]="userSignup.password" maxlength="50" name="password"/>
+        <input type="submit" value="Submit"/>
+    </form>
+</div>

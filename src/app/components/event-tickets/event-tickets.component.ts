@@ -14,16 +14,10 @@ export class EventTicketsComponent implements OnInit {
   @Output() ticketSelect: EventEmitter<EventTickets> = new EventEmitter(); 
 
 
-  constructor(private userService: UserService, 
-    private alertsService: AlertsService) { }
+  constructor() { }
 
   ticketSelected(ticket: EventTickets) {
-    const userSession = this.userService.getUserSession();
-    if(!userSession) {
-      this.alertsService.alert('info', 'Please login in order to buy ticket')
-    } else {
-      this.ticketSelect.emit(ticket);
-    }
+    this.ticketSelect.emit(ticket);
   }
 
   ngOnInit() {

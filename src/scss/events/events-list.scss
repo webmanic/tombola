@@ -1,8 +1,9 @@
 ul.events {
     display: flex;
+    flex-flow: wrap;
     .event {
         display: inline-flex;
-        width: 24%;
+        flex-basis: 24%;
         margin: 0.5%;
         cursor: pointer;
         .title {
@@ -11,14 +12,32 @@ ul.events {
             padding: 5px;
         }
         .image {
+            position: relative;
             border: 1px solid $GREY-SOFT-B;
             img{
                 width: 100%;
+                padding: 20px;
+            }
+            .banner{
+                float: right;
+                background: #4165a9;
+                padding: 5px;
+                position: absolute;
+                /* top: 5px; */
+                right: 0px;
+                color: white;
+                opacity: 0.9;
+                border-radius: 40px;
+                margin: 5px;
             }
         }
 
         &:hover{
             opacity: 0.7;
+        }
+
+        @include respond-to(sm){
+            flex-basis: 49%;
         }
     }
 }

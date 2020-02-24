@@ -1,8 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { UserLogin } from 'src/app/interfaces/user-login';
 import { UserSession } from 'src/app/interfaces/user-session';
+import { UserSignup } from 'src/app/interfaces/user-signup';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,8 @@ import { UserSession } from 'src/app/interfaces/user-session';
 
 export class UserService {
 
+  @Output() authorized: EventEmitter<any> = new EventEmitter();
+  
   public api: string = environment.api.path;
   private sessionKey = 'session';
 
@@ -43,4 +47,20 @@ export class UserService {
       callback(false)
     })
   }
+
+  signup = (userSignup: UserSignup, callback) => {
+    return this.http.post(`${this.api}/user/signup`, {
+      username: userSignup.username,
+      password: userSignup.password
+    })
+    .subscribe((userSession: UserSession) => {
+      userSession.username = userSignup.username;
+      this.saveUserSession(userSession);
+      callback(userSession)
+    }, (error: HttpErrorResponse) => {
+      callback(error.error.message)
+    })
+  }
+
+
 }

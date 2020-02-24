@@ -1,0 +1,12 @@
+header {
+  a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        color: white;
+        text-decoration: underline !important;
+    }
+  }
+}

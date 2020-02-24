@@ -17,6 +17,14 @@ export class EventsService {
 
   }
 
+  bet = (userId: string, eventId: string, ticketNo: Array<number>) => {
+    return this.http.post(`${this.api}/event/bet`, {
+      userId,
+      eventId,
+      ticketNo
+    });
+  }
+
   pageValid = (id) => {
     return this.http.post(`${this.api}/event/valid/${id}`, {}).toPromise();
   }

@@ -1,0 +1,14 @@
+.progress {
+  background: black;
+  border-radius: 0px;
+  height: 4px;
+  .info {
+    background-color: #36ef9a;
+  }
+  .warn {
+    background-color: orange;
+  }
+  .error {
+      background-color: red;
+  }
+}

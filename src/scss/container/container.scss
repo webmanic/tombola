@@ -2,12 +2,25 @@
     width: 1200px;
     margin: auto;
 
+    @include respond-to(lg){
+        width: 100%;
+        max-width: 100%;
+    }
+
     .container-100{
         width: 100%;
     }
 
+    .container-60{
+        width: 60%;
+    }
+
     .container-50{
         width: 50%;
+    }
+
+    .container-40{
+        width: 40%;
     }
 
     .container-75{
@@ -17,4 +30,11 @@
     .container-25{
         width: 25%;
     }
+
+    @include respond-to(sm){
+        .container-sm-100{
+            width: 100%;
+        }
+    }
+    
 }

@@ -7,7 +7,9 @@ input[type="submit"]{
 }
 
 input[type="submit"],
-input[type="button"] {
+input[type="button"],
+button {
+    border: none;
     background: $ORANGE-DARK-A;
     color: white;
 }

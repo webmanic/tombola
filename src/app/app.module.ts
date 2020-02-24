@@ -18,6 +18,7 @@ import {  NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlertsComponent } from './components/alerts/alerts.component';
 import { SignUpComponent } from './views/sign-up/sign-up.component';
 import { EventTicketComponent } from './components/event-tickets/event-ticket/event-ticket.component';
+import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { EventTicketComponent } from './components/event-tickets/event-ticket/ev
     LoginComponent,
     AlertsComponent,
     SignUpComponent,
-    EventTicketComponent
+    EventTicketComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

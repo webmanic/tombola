@@ -1,12 +1,27 @@
 <div class="event-bet">
+    <tb-progress-bar [expires]="expiresDate" 
+        [withinTimeLimit]="withinTimeLimit"
+        [width]="width" 
+        *ngIf="valid && withinTimeLimit"></tb-progress-bar>
     <h1>Win {{eventBets.title}}</h1>
-    <div class="container flex">
-        <div class="container-50">
+    <div class="container flex flex-wrap">
+        <div class="container-50 container-sm-100">
             <img [src]="eventBets.imageUrl"/>
         </div>
-        <div class="container-50">
-            <div class="container-100 ticker-summary">
-                Total: {{ price | formatCurrency | currency:'GBP'}}
+        <div class="container-50 container-sm-100">
+            <div class="container-100 ticker-summary" *ngIf="valid">
+                <div>
+                    Total: {{ price | formatCurrency | currency:'GBP'}}
+                    <div class="info float-right" *ngIf="percentageWinning > 0">
+                        Chances winning: {{percentageWinning | number : '1.2-2'}}%
+                    </div>
+                    <button class="container-100" *ngIf="price > 0" (click)="bet()">Bet</button>
+                    <small class="interest-info" *ngIf="eventBets.pricePercentage > 0">
+                        For every {{eventBets.priceIncrease}} tickets bet {{eventBets.pricePercentage}}% applies to the cost increase
+                    </small>
+                </div>
+                <div>
+                </div>
             </div>
             <tb-event-tickets [tickets]="eventBets.tickets" (ticketSelect)="ticketSelected($event)"></tb-event-tickets>
         </div>
